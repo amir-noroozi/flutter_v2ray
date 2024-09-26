@@ -43,9 +43,7 @@
 
 | Platform  | Status    | Info |
 | --------- | --------- | ---- |
-| Android   | Done ✅   | Xray 1.8.7 |
-| IOS       | Soon ❎   | - |
-| Desktop   | Done ✅   | For purchase: [t.me/blueboy_tm](https://t.me/blueboy-tm) |
+| Android   | Done ✅   | Xray 24.9.7 |
 
 <br>
 
