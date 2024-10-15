@@ -9,11 +9,16 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.VpnService;
+import java.util.concurrent.CountDownLatch;
 import android.os.Build;
-
+import java.util.HashMap;
+import java.util.Map;
+import java.io.Serializable;
+import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.github.blueboytm.flutter_v2ray.v2ray.V2rayController;
 import com.github.blueboytm.flutter_v2ray.v2ray.V2rayReceiver;
@@ -134,7 +139,7 @@ public class FlutterV2rayPlugin implements FlutterPlugin, ActivityAware, PluginR
                             public void run() {
                                 try {
                                     // Simulate the ping operation
-                                    Long result = V2rayController.getV2rayServerDelay(config);
+                                    Long result = V2rayController.getV2rayServerDelay(config, "");
                                     Map<String, Long> myMap = new HashMap<>();
                                     myMap.put(config, result);
                                     android.util.Log.d("Plugin", "test ping: " + myMap);
