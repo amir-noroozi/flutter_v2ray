@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import com.google.gson.Gson;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -129,7 +130,7 @@ public class FlutterV2rayPlugin implements FlutterPlugin, ActivityAware, PluginR
                     String res = call.argument("configs");
                     List<String> configs = new Gson().fromJson(res, List.class);
 
-                    realPings = new ConcurrentHashMap<>();
+                    ConcurrentHashMap<String, Long> realPings = new ConcurrentHashMap<>();
 
                     CountDownLatch latch = new CountDownLatch(configs.size());
 
