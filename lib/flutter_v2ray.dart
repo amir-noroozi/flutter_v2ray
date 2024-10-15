@@ -96,6 +96,10 @@ class FlutterV2ray {
     );
   }
 
+  Future<dynamic> getAllServerDelay({required List<String> configs}) async {
+    return FlutterV2rayPlatform.instance.getAllServerDelay(configs: configs);
+  }
+
   /// Stop V2Ray service.
   Future<void> stopV2Ray() async {
     await FlutterV2rayPlatform.instance.stopV2Ray();

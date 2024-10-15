@@ -16,6 +16,9 @@ abstract class FlutterV2rayPlatform extends PlatformInterface {
   /// Defaults to [MethodChannelFlutterV2ray].
   static FlutterV2rayPlatform get instance => _instance;
 
+  Future<dynamic> getAllServerDelay({required List<String> configs}) {
+    throw UnimplementedError('getServerDelay() has not been implemented.');
+  }
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [FlutterV2rayPlatform] when
   /// they register themselves.

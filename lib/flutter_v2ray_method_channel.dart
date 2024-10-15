@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'dart:convert';
 import 'model/v2ray_status.dart' show V2RayStatus;
 
 import 'flutter_v2ray_platform_interface.dart';
@@ -68,6 +69,15 @@ class MethodChannelFlutterV2ray extends FlutterV2rayPlatform {
     return await methodChannel.invokeMethod('getServerDelay', {
       "config": config,
       "url": url,
+    });
+  }
+
+
+  @override
+  Future<dynamic> getAllServerDelay({required List<String> configs}) {
+    final res = jsonEncode(configs);
+    return methodChannel.invokeMethod('getAllServerDelay', {
+      "configs": res,
     });
   }
 
