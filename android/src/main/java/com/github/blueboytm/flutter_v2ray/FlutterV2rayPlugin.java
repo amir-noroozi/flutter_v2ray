@@ -143,7 +143,7 @@ public class FlutterV2rayPlugin implements FlutterPlugin, ActivityAware, PluginR
                                     Long result = V2rayController.getV2rayServerDelay(config, "");
                                     Map<String, Long> myMap = new HashMap<>();
                                     myMap.put(config, result);
-                                    android.util.Log.d("Plugin", "test ping: " + myMap);
+//                                    android.util.Log.d("Plugin", "test ping: " + myMap);
 
                                     if (result != null) {
                                         realPings.put(config, result);
@@ -167,7 +167,7 @@ public class FlutterV2rayPlugin implements FlutterPlugin, ActivityAware, PluginR
                                 activity.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        android.util.Log.d("Plugin", "Final pings: " + realPings);
+//                                        android.util.Log.d("Plugin", "Final pings: " + realPings);
                                         result.success(new Gson().toJson(realPings));
                                     }
                                 });
